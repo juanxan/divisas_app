@@ -1,0 +1,15 @@
+ion-content.background{
+    --ion-background-color:#42ab49;
+}   
+ion-card{
+    margin-top: 24px;
+}
+ion-icon {
+    color: white;
+}
+ion-text ion-icon {
+    margin-top: 34px;
+    --ionicon-stroke-width: 124px;
+    width: 24rem;
+    height: 8rem;
+  }

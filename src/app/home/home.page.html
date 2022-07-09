@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="auth-form">
+  <ion-thumbnail>
+    <ion-img src="./assets/img/logo.png"></ion-img>
+  </ion-thumbnail>
+  <ion-text color="light">
+    <div class="ion-text-center">
+      <h1>World Transfer Money</h1>
+      <p>Accede o Registrate</p>
+    </div>
+  </ion-text>
+  <ion-grid class="home-ion">
+    <ion-row>
+      <ion-col align-self-center>
+        <ion-button [routerLink]="['/signup']" expand="block" color="light">Registrate</ion-button>
+        <ion-button [routerLink]="['/login']" expand="block" color="light">Iniciar Sesion</ion-button>
+        <div class="ion-text-center">
+          <p style="color: #fff;">Al usar esta aplicacion, tu aceptas los terminos de usos y politicas de privacidad</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/']"><ion-icon name="arrow-back-outline"color="black"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button ><ion-icon name="settings-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-text>
+    <ion-icon name="person-circle-outline"></ion-icon>
+  </ion-text>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">Nombre: </ion-label>
+          <ion-input color="light" type="text" [(ngModel)]="name" class="login-input"></ion-input>
+          <ion-icon name="person-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">Apellido: </ion-label>
+          <ion-input color="light" type="text" [(ngModel)]="last_name" class="login-input"></ion-input>
+          <ion-icon name="person-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">Nacionalidad: </ion-label>
+          <ion-input color="light" type="text" [(ngModel)]="nationality" class="login-input"></ion-input>
+          <ion-icon name="ribbon-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">Fecha de Nacimiento: </ion-label>
+          <ion-input color="light" type="date" [(ngModel)]="date_birth" class="login-input"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">Documento: </ion-label>
+          <ion-input color="light" type="text" [(ngModel)]="document" class="login-input"></ion-input>
+          <ion-icon name="id-card-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">Fecha de Expedicion: </ion-label>
+          <ion-input color="light" type="date" [(ngModel)]="issuance_document" class="login-input"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">E-mail: </ion-label>
+          <ion-input color="light" type="text" [(ngModel)]="email" class="login-input"></ion-input>
+          <ion-icon name="mail-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label  color="light" position="floating" class="login-label">Numero de telefono: </ion-label>
+          <ion-input color="light" type="text" [(ngModel)]="num" class="login-input"></ion-input>
+          <ion-icon name="call-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label color="light" position="floating"  class="login-label">Contraseña: </ion-label>
+          <ion-input color="light" type="password" [(ngModel)]="password" id="password" class="login-input"></ion-input>
+          <ion-button  color="medium" (click)="cambiarTipo()" slot="end"><ion-icon name="eye-off-outline" id="icon"></ion-icon></ion-button>
+        </ion-item>
+        <ion-item>
+            <ion-select color="light" class="custom-options"  interface="action-sheet" [(ngModel)]="genero" placeholder="Elige tu Genero">
+              <ion-select-option color="light" [value]="item" *ngFor="let item of gender">{{item}}</ion-select-option>
+            </ion-select>
+            <ion-icon name="accessibility-outline" slot="end"></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-select color="light" class="custom-options"  interface="action-sheet" [(ngModel)]="stratum" placeholder="Estrato: ">
+            <ion-select-option color="light" [value]="item" *ngFor="let item of estrato">{{item}}</ion-select-option>
+          </ion-select>
+          <ion-icon name="accessibility-outline" slot="end"></ion-icon>
+      </ion-item>
+      </ion-list>
+      <div>
+        <ion-button color="light" expand="block" (click)="signIn()" >Iniciar Sesion</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
