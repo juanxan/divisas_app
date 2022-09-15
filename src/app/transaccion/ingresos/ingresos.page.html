@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title class="" slot="end">
+        <img alt="logo" height="40"   src="../../assets/img/logo.png" > 
+      </ion-title >
+      <ion-title slot="end">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-text color="dark" class="ion-text-center">
+    <h1>Ingresa Dinero a la cuenta</h1>
+  </ion-text>
+  <form [formGroup]="formularioIngreso" (ngSubmit)="presentSure(formularioIngreso.value)">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating"  class="login-label">Banco</ion-label>
+        <ion-select color="black" class="custom-options"  interface="action-sheet" formControlName="bank" placeholder="Elige tu Banco">
+          <ion-select-option color="black" [value]="item" *ngFor="let item of bancos">{{item}}</ion-select-option>
+        </ion-select>
+        <ion-icon name="server-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validationMessages.bank">
+        <div *ngIf="formularioIngreso.get('bank').hasError(validation.type) && (formularioIngreso.get('bank').dirty ||
+        formularioIngreso.get('bank').touched)" >
+        {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+      <ion-item>
+        <ion-label position="floating"  class="login-label">Tipo de Cuenta</ion-label>
+        <ion-select color="black" class="custom-options"  interface="action-sheet" formControlName="tipoCuenta" placeholder="Elige tu tipo de cuenta">
+          <ion-select-option color="black" [value]="item" *ngFor="let item of tipoCuentas">{{item}}</ion-select-option>
+        </ion-select>
+        <ion-icon name="server-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validationMessages.tipoCuenta">
+        <div *ngIf="formularioIngreso.get('tipoCuenta').hasError(validation.type) && (formularioIngreso.get('tipoCuenta').dirty ||
+        formularioIngreso.get('tipoCuenta').touched)" >
+        {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    <ion-item>
+      <ion-label position="floating"  class="login-label">Numero de Cuenta</ion-label>
+      <ion-input  type="number" formControlName="numeroCuenta"  class="login-input"></ion-input>
+      <ion-icon name="cash-outline" slot="end"></ion-icon>
+    </ion-item>
+    <div class="validation-error">
+      <ng-container *ngFor="let validation of validationMessages.numeroCuenta">
+        <div *ngIf="formularioIngreso.get('numeroCuenta').hasError(validation.type) && (formularioIngreso.get('numeroCuenta').dirty ||
+        formularioIngreso.get('numeroCuenta').touched)" >
+        {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>  
+      <ion-item>
+        <ion-label position="floating"  class="login-label">Valor</ion-label>
+        <ion-input  type="number" formControlName="balance"  class="login-input"></ion-input>
+        <ion-icon name="cash-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validationMessages.balance">
+          <div *ngIf="formularioIngreso.get('balance').hasError(validation.type) && (formularioIngreso.get('balance').dirty ||
+          formularioIngreso.get('balance').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>      
+      <div class="ingreso-btn">
+        <ion-button [disabled]="formularioIngreso.invalid" expand="block" type="submit" >Recargar Cuenta</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <div class="transaccion-img">
+    <img src="../../../assets/img/alcancia.png" alt="" width="350" height="">
+  </div>
+</form>
+</ion-content>

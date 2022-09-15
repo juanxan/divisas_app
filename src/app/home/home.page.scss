@@ -1,13 +1,45 @@
 ion-content.auth-form{
   --ion-background-color:#42ab49;
 }
+ion-item{
+     --border-style: hidden;
+}
+ion-content{
+  --background:#EEEEEE ;
+}
 ion-grid.home-ion{
   padding-top:13rem;
 }
-ion-button{
-  --border-radius: 10rem;
+.container ion-button{
+  height: 30px;
+  --border-radius: 16px;
 }
 ion-thumbnail{
   --size: 8rem;
   margin: 0 auto;
+}
+.container-valores{
+  width: 100%;
+  padding-top: 1rem;
+}
+.container-valores ion-button{
+  margin-top: 4rem;
+}
+ion-content{
+  --background: url(../../assets/img/backgroundHome.png) 0 0/100% 100% no-repeat;
+}
+.container{
+  --backgrund: none;
+  padding-bottom: 1rem;
+  height: 270px;
+  color: white;
+}
+
+ion-col ion-item{
+  border-radius: 16px;
+  box-shadow: 0px 20px 25px -10px rgba(0,0,0,0.3);
+}
+ion-card{
+  border-radius: 16px;
+  box-shadow: 0px 20px 25px -10px rgba(0,0,0,0.3);
 }

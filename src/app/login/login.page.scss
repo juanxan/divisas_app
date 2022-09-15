@@ -1,0 +1,46 @@
+.titleLogin{
+    background: url(../../assets/img/signup-img.png) 0 0/100% 100% no-repeat;
+    height: 300px;
+  }
+  .titleLogin h1{
+    font-family: sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: 0 0 0 25px;
+  }
+  .titleLogin h2{
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 58px 0 0 25px;
+  } 
+ion-card{
+    margin-top: 5rem;
+    box-shadow: none;
+}
+ion-icon {
+    color: white;
+    
+}
+.loginCard-btn{
+    margin-top: 5rem;
+}
+.loginCard-btn ion-button{
+    --border-radius: 50px;
+    --box-shadow: 0 10px 10px rgba(128, 219, 116, 0.5);
+}
+.ion-activatable{
+    --background: #379d30;
+}
+.button-disabled{
+    --background: #80db74;
+}
+ion-text ion-icon {
+    margin-top: 34px;
+    --ionicon-stroke-width: 124px;
+    width: 24rem;
+    height: 8rem;
+  }
+  .custom-alert .alert-wrapper {
+    border-radius: 14px;
+  }

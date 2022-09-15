@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title class="" slot="end">
+        <img alt="logo" height="40"   src="../../assets/img/logo.png" > 
+      </ion-title >
+      <ion-title slot="end">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="formularioSalida" (ngSubmit)="presentSure(formularioSalida.value)">
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating"  class="login-label">Tipo de Moneda</ion-label>
+        <ion-input  type="text"  value="COP" class="login-input" disabled></ion-input>
+        <ion-icon name="server-outline" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"  class="login-label">Tu saldo</ion-label>
+        <ion-input  type="number" value="{{balances.balance}}" class="login-input" disabled></ion-input>
+        <ion-icon name="cash-outline" slot="end"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"  class="login-label">Valor</ion-label>
+        <ion-input  type="number" value="{{value}}" formControlName="value" (ngModelChange)="changeValue($event)"  class="login-input"></ion-input>
+        <ion-icon name="cash-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div class="validation-error" *ngIf="validarSaldo">El valor es mayor a tu saldo</div>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validationMessages.value">
+          <div *ngIf="formularioSalida.get('value').hasError(validation.type) && (formularioSalida.get('value').dirty ||
+          formularioSalida.get('value').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>   
+      <ion-item>
+        <ion-label position="floating"  class="login-label">Documento a enviar</ion-label>
+        <ion-input  type="number" formControlName="document"  class="login-input"></ion-input>
+        <ion-icon name="id-card-outline" slot="end"></ion-icon>
+      </ion-item>
+      <div class="validation-error">
+        <ng-container *ngFor="let validation of validationMessages.document">
+          <div *ngIf="formularioSalida.get('document').hasError(validation.type) && (formularioSalida.get('document').dirty ||
+          formularioSalida.get('document').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>   
+      <div class="salidas-btn">
+        <ion-button [disabled]="formularioSalida.invalid" expand="block" type="submit" >Enviar Dinero</ion-button>
+      </div>
+      
+    </ion-card-content>
+  </ion-card>
+</form>
+  <div class="transaccion-img">
+    <img src="../../../assets/img/alcancia.png" alt="" width="350" height="">
+  </div>
+</ion-content>

@@ -1,0 +1,16 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    animation:slide-fwd-center 2s ease-in both}
+img{
+    height: 300px;
+    margin-top: 50%;
+}
+    @keyframes slide-fwd-center{
+        0%{
+            -webkit-transform:translateZ(0);
+            transform:translateZ(0)}
+        100%{
+            -webkit-transform:translateZ(160px);
+            transform:translateZ(160px)}
+}

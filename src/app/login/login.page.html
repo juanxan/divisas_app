@@ -1,0 +1,66 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/intro']"><ion-icon name="arrow-back-outline"color="black"></ion-icon></ion-button>
+    </ion-buttons>
+      <ion-title class="ion-text-center" slot="end">
+        <img alt="logo" height="40"   src="../../assets/img/logo.png" > 
+      </ion-title >
+      <ion-title slot="end" >
+        <ion-icon color="black" name="settings-outline"></ion-icon>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+<ion-content class="background">
+  <div class="titleLogin">
+    <ion-text color="light">
+      <h2>Welcome Back,</h2>
+      <h1>Log In!</h1>
+    </ion-text>
+  </div>
+  
+
+  <ion-card class="loginCard">
+    <ion-card-content>
+      <form [formGroup]="formularioLogin" (ngSubmit)="signUp(formularioLogin.value)">
+        <ion-list>
+          <ion-item>
+            <ion-label   position="floating" class="login-label">E-mail: </ion-label>
+            <ion-input  type="text"  formControlName="email"  class="login-input"></ion-input>
+            <ion-icon color="dark" name="person-outline" slot="end"></ion-icon>
+          </ion-item>
+          <div class="validation-error">
+            <ng-container *ngFor="let validation of validationMessages.email">
+              <div *ngIf="formularioLogin.get('email').hasError(validation.type) && (formularioLogin.get('email').dirty || formularioLogin.get('email').touched)">
+                {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
+          <ion-item>
+            <ion-label  position="floating"  class="login-label">Contraseña: </ion-label>
+            <ion-input  type="password" formControlName="pass" id="password" class="login-input"></ion-input>
+            <ion-button  color="medium" (click)="cambiarTipo()" slot="end"><ion-icon name="eye-off-outline" id="icon"></ion-icon></ion-button>
+          </ion-item>
+          <div class="validation-error">
+            <ng-container *ngFor="let validation of validationMessages.password">
+            <div *ngIf="formularioLogin.get('pass').hasError(validation.type) && (formularioLogin.get('pass').dirty ||
+                        formularioLogin.get('pass').touched)" >
+            {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        </ion-list>
+        <div class="ion-text-center">
+          <ion-text color="dark">No tienes cuenta? Crea una <a [routerLink]="['/signup']">Aquí</a></ion-text>
+        </div>
+        <div class="loginCard-btn">
+          <ion-button  [disabled]="formularioLogin.invalid" expand="block" type="submit" >Iniciar Sesion</ion-button>
+        </div>
+      </form>
+      
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
+

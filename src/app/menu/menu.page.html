@@ -1,0 +1,59 @@
+<ion-split-pane contentId="content">
+  <ion-menu side="start" menuId="main-menu" contentId="content">
+    <ion-header>
+      <ion-toolbar color="light">
+        <ion-thumbnail>
+          <ion-img src="./assets/img/logo.png"></ion-img>
+        </ion-thumbnail>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item [routerLink]="['/menu/home']">Inicio
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+        </ion-item>
+        <ion-item [routerLink]="['/menu/divisas']"> 
+          <ion-icon name="cash-outline" slot="start"></ion-icon>
+            Divisas
+        </ion-item>
+        <ion-item [routerLink]="['/menu/perfil']">Pefil
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+        </ion-item>
+        <ion-item [routerLink]="['/menu/politicas']">Politicas
+          <ion-icon name="shield-checkmark-outline" slot="start"></ion-icon>
+        </ion-item>
+        <ion-item [routerLink]="['/menu/terminos']"> 
+          <ion-icon name="shield-half-outline" slot="start"></ion-icon>
+          Terminos
+        </ion-item>
+        <ion-item  (click)="exit()">
+          <ion-button color="light">
+            Salir
+          </ion-button>
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-item class="ion-text-center">
+          <div class="container-icons">
+            <div class="item-logo item-facebook">
+              <ion-icon name="logo-facebook" ></ion-icon>
+            </div>
+            <div class="item-logo item-twitter">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </div>
+            <div class="item-logo item-instagram">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </div>
+          </div>
+        </ion-item>
+        <ion-item>Configuracion
+          <ion-icon name="settings-outline" slot="start"></ion-icon>
+        </ion-item>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>

@@ -1,0 +1,15 @@
+.salidas-btn ion-button{
+    --border-radius: 50px;
+    --box-shadow: 0 10px 10px rgba(128, 219, 116, 0.5);
+}
+.salidas-btn .ion-activatable{
+    --background: #379d30;
+}
+.salidas-btn .button-disabled{
+    --background: #80db74;
+}
+.transaccion-img{
+    position: relative;
+    bottom: -50px;
+    left: 46px;
+}

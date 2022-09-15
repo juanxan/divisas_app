@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "World Transfer Money",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

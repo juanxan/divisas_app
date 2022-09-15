@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title class="" slot="end">
+        <img alt="logo" height="40"   src="../../assets/img/logo.png" > 
+      </ion-title >
+      <ion-title slot="end">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngFor="let historial of historiales">
+    <ion-card class="{{historial.type}}">
+      <ion-card-header>
+        <ion-card-subtitle color="light">{{historial.type}}</ion-card-subtitle>
+        <ion-card-title color="light" class="ion-text-center">${{historial.amount}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-icon size="large" name="checkmark-circle-outline"></ion-icon>
+        <ion-card-subtitle>{{historial.bank}}</ion-card-subtitle>
+        <ion-card-subtitle> {{historial.transaction_date}}</ion-card-subtitle>
+      </ion-card-content>
+    </ion-card>
+</ng-container>
+</ion-content>

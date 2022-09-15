@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'io.ionic.starter',
-  appName: 'app',
+  appName: 'World Transfer Money',
   webDir: 'www',
   bundledWebRuntime: false
 };

@@ -1,0 +1,12 @@
+.signupCard-btn ion-button{
+    --border-radius: 50px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    --box-shadow: 0 10px 10px rgba(128, 219, 116, 0.5);
+}
+.signupCard-btn .ion-activatable{
+    --background: #379d30;
+}
+.signupCard-btn .button-disabled{
+    --background: #80db74;
+}

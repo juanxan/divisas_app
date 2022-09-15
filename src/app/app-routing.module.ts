@@ -1,20 +1,32 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { HomeGuard } from './guards/home.guard';
 const routes: Routes = [
-  {path: 'home',loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
-  {path: '',redirectTo: 'home',pathMatch: 'full'},
+  {path: '',redirectTo: 'menu/home',pathMatch: 'full'},
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'signup',
-    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
+    loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
+    path: 'intro',
+    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule),
+    canActivate:[HomeGuard]
+  },
+  {
+    path: 'divisas',
+    loadChildren: () => import('./transaccion/divisas/divisas.module').then( m => m.DivisasPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
   }
 ];
 

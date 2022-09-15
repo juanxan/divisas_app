@@ -1,0 +1,21 @@
+ion-card-header{
+    --background: #379d30;
+    --color: white;
+    border-radius: 1rem 1rem 0 0;
+}
+ion-card{
+    margin: 14px;
+    border-radius: 1rem 1rem 0 0;
+}
+.divisas img{
+    position: absolute;
+    left: 19rem;
+}
+.divisas ion-card-header ion-card-title{
+    font-size: 24px;
+    padding: 0.5rem;
+}
+.divisas ion-card-content ion-card-title{
+    font-size: 24px;
+    padding: 0.5rem;
+}

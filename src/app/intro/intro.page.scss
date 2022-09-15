@@ -1,0 +1,39 @@
+.intro h1{
+  font-family: sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+
+}
+.titleLogin h2{
+  font-family: sans-serif;
+  font-weight: bold;
+}
+ion-button{
+    --border-radius: 10rem;
+}
+.intro-logo{
+  margin-top: 3rem;
+}
+.ion-activatable{
+  --background: #379d30;
+}
+.intro-btn-login{
+  margin-bottom: 1rem;
+}
+.intro-btn-login ion-button{
+  --background: #379d30;
+  --box-shadow: 0 10px 10px rgba(128, 219, 116, 0.5);
+  height: 3rem;
+  margin-bottom: 2rem;
+}
+.intro-btn-signup ion-button{
+  --background: #379d30;
+  width: 21rem;
+  margin: auto;
+}
+.intro-title p{
+  margin-bottom: 3rem;
+}
+.intro-terminos p{
+  margin-top: 4rem;
+}

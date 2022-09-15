@@ -1,0 +1,39 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center" slot="secondary">
+      <img alt="logo" height="40"   src="../../assets/img/logo.png" > 
+    </ion-title >
+      <ion-title slot="end">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+-->
+<ion-content class="intro">
+  <ion-title class="ion-text-center intro-logo">
+    <img alt="logo" height="300"  width="300" src="../../assets/img/logo.png"> 
+  </ion-title >
+  <ion-text >
+    <div class="ion-text-center intro-title">
+      <h1>Sign Up!</h1>
+      <p>Accede o Registrate</p>
+    </div>
+  </ion-text>
+  <ion-grid class="home-ion">
+    <ion-row>
+      <ion-col align-self-center>
+        <div class="intro-btn-login">
+          
+          <ion-button [routerLink]="['/login']" expand="block" >
+            <ion-icon  name="person-outline" slot="start"></ion-icon>Iniciar Sesion</ion-button>
+        </div>
+        <div class="intro-btn-signup">
+          <ion-button [routerLink]="['/signup']" expand="block" color="light">Registrate</ion-button>
+        </div>
+        <div class="ion-text-center intro-terminos">
+          <p style="color: #000;">Al usar esta aplicacion, tu aceptas los terminos de usos y politicas de privacidad</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

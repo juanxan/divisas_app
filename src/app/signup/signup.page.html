@@ -1,0 +1,152 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button [routerLink]="['/intro']"><ion-icon name="arrow-back-outline"color="black"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button ><ion-icon name="settings-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="background">
+<!--   <ion-text>
+    <ion-icon name="person-circle-outline"></ion-icon>
+  </ion-text>-->
+  
+  <div class="titleLogin">
+    <ion-text color="light">
+      <h2>Hello,</h2>
+      <h1>Sign Up!</h1>
+    </ion-text>
+  </div>
+
+  <ion-card class="signupCard">
+    <ion-card-content>
+      <form [formGroup]="formularioSignup" (ngSubmit)="signIn(formularioSignup.value)">
+      <ion-list>
+        <ion-item>
+          <ion-label  color="black" position="floating" class="login-label">Nombre: </ion-label>
+          <ion-input color="black" type="text" formControlName="name" class="login-input"></ion-input>
+          <ion-icon color="dark" name="person-outline" slot="end"></ion-icon>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.name">
+          <div *ngIf="formularioSignup.get('name').hasError(validation.type) && (formularioSignup.get('name').dirty ||
+          formularioSignup.get('name').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+        <ion-item>
+          <ion-label  color="black" position="floating" class="login-label">Apellido: </ion-label>
+          <ion-input color="black" type="text" formControlName="last_name" class="login-input"></ion-input>
+          <ion-icon color="dark" name="person-outline" slot="end"></ion-icon>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.last_name">
+          <div *ngIf="formularioSignup.get('last_name').hasError(validation.type) && (formularioSignup.get('last_name').dirty ||
+          formularioSignup.get('last_name').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+        <ion-item>
+          <ion-label  color="black" position="floating" class="login-label">Nacionalidad: </ion-label>
+          <ion-input color="black" type="text" formControlName="nationality" class="login-input"></ion-input>
+          <ion-icon color="dark" name="ribbon-outline" slot="end"></ion-icon>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.nationality">
+          <div *ngIf="formularioSignup.get('nationality').hasError(validation.type) && (formularioSignup.get('nationality').dirty ||
+          formularioSignup.get('nationality').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+        <ion-item>
+          <ion-label  color="black" position="floating" class="login-label">Fecha de Nacimiento: </ion-label>
+          <ion-input color="black" type="date" formControlName="date_birth" class="login-input"></ion-input>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.date_birth">
+          <div *ngIf="formularioSignup.get('date_birth').hasError(validation.type) && (formularioSignup.get('date_birth').dirty ||
+          formularioSignup.get('date_birth').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+        <ion-item>
+          <ion-label  color="black" position="floating" class="login-label">Documento: </ion-label>
+          <ion-input color="black" type="number" formControlName="document" class="login-input"></ion-input>
+          <ion-icon color="dark" name="id-card-outline" slot="end"></ion-icon>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.document">
+          <div *ngIf="formularioSignup.get('document').hasError(validation.type) && (formularioSignup.get('document').dirty ||
+          formularioSignup.get('document').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+        <ion-item>
+          <ion-label  color="black" position="floating" class="login-label">E-mail: </ion-label>
+          <ion-input color="black" type="text" formControlName="email" class="login-input"></ion-input>
+          <ion-icon color="dark" name="mail-outline" slot="end"></ion-icon>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.email">
+          <div *ngIf="formularioSignup.get('email').hasError(validation.type) && (formularioSignup.get('email').dirty ||
+          formularioSignup.get('email').touched)" >
+          {{ validation.message }}
+          </div>
+        </ng-container>
+      </div>
+        <ion-item>
+          <ion-label  color="black" position="floating" class="login-label">Numero de telefono: </ion-label>
+          <ion-input color="black" type="number" formControlName="num" class="login-input"></ion-input>
+          <ion-icon color="dark" name="call-outline" slot="end"></ion-icon>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.num">
+            <div *ngIf="formularioSignup.get('num').hasError(validation.type) && (formularioSignup.get('num').dirty ||
+            formularioSignup.get('num').touched)" >
+            {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <ion-item>
+          <ion-label color="black" position="floating"  class="login-label">Contraseña: </ion-label>
+          <ion-input color="black" type="password" formControlName="pass" id="password" class="login-input"></ion-input>
+          <ion-button  color="medium" (click)="cambiarTipo()" slot="end"><ion-icon name="eye-off-outline" id="icon"></ion-icon></ion-button>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.password">
+            <div *ngIf="formularioSignup.get('pass').hasError(validation.type) && (formularioSignup.get('pass').dirty ||
+            formularioSignup.get('pass').touched)" >
+            {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+        <ion-item>
+            <ion-select color="dark" class="custom-options"  interface="action-sheet" formControlName="gender" placeholder="Elige tu Genero">
+              <ion-select-option color="dark" [value]="item" *ngFor="let item of genders">{{item}}</ion-select-option>
+            </ion-select>
+            <ion-icon name="accessibility-outline" slot="end"></ion-icon>
+        </ion-item>
+        <div class="validation-error">
+          <ng-container *ngFor="let validation of validationMessages.gender">
+            <div *ngIf="formularioSignup.get('gender').hasError(validation.type) && (formularioSignup.get('gender').dirty ||
+            formularioSignup.get('gender').touched)" >
+            {{ validation.message }}
+            </div>
+          </ng-container>
+        </div>
+      </ion-list>
+      <div class="signupCard-btn">
+        <ion-button [disabled]="formularioSignup.invalid" expand="block" type="submit" >Registrarse</ion-button>
+      </div>
+    </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
